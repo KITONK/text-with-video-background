@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Section>
+      <Video autoPlay loop muted>
+        <source src="/video/video.mp4" type="video/mp4" />
+      </Video>
+      <Title>BEYOND</Title>
+    </Section>
   );
 }
+
+const Section = styled.section`
+  width: 100%;
+  height: 100vh;
+  position: relative;
+`;
+
+const Video = styled.video`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+`;
+
+const Title = styled.h1`
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  font-size: 300px;
+  color: #fff;
+  mix-blend-mode: multiply;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Source Sans Pro", sans-serif;
+`;
 
 export default App;
